@@ -28,6 +28,10 @@ buffering/agile_event_flushing=true
 
 3d/run_on_separate_thread=true
 
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true
+
 [xr]
 
 openxr/enabled=true
