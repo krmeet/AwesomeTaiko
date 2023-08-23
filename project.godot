@@ -10,6 +10,26 @@ config_version=5
 
 [application]
 
-config/name="Japanese Drum Game"
+config/name="OpenTaiko"
 config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=800
+window/size/viewport_height=600
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_height"
+
+[input_devices]
+
+buffering/agile_event_flushing=true
+
+[physics]
+
+3d/run_on_separate_thread=true
+
+[xr]
+
+openxr/enabled=true
+openxr/startup_alert=false
+shaders/enabled=true
