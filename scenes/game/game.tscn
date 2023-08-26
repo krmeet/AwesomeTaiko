@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://r22uhrpfogju"]
+
+[ext_resource type="PackedScene" uid="uid://bq0nykadfr38l" path="res://scenes/game/player.tscn" id="1_yrwlf"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_yrwlf")]
+offset_top = 188.0
+offset_bottom = 364.0

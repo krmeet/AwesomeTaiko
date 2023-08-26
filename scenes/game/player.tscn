@@ -1,0 +1,142 @@
+[gd_scene load_steps=12 format=3 uid="uid://bq0nykadfr38l"]
+
+[ext_resource type="Texture2D" uid="uid://c0b3tm43sed3f" path="res://assets/game/lane/background.png" id="1_78gdr"]
+[ext_resource type="Texture2D" uid="uid://u8mjy3w5r1ep" path="res://assets/game/lane/hitcircle.png" id="2_q8qbm"]
+[ext_resource type="Texture2D" uid="uid://bmwd8fxiay7xe" path="res://assets/game/player/base.png" id="2_wawyk"]
+[ext_resource type="Texture2D" uid="uid://by4l0m8jt00bs" path="res://assets/game/player/don.png" id="3_6r4l0"]
+[ext_resource type="Texture2D" uid="uid://ydb4m43n0w0i" path="res://assets/game/player/ka.png" id="4_jf3ky"]
+[ext_resource type="Texture2D" uid="uid://chuss82muvjxi" path="res://assets/game/lane/ka.png" id="6_duf2n"]
+[ext_resource type="Texture2D" uid="uid://e18x8leo20g" path="res://assets/game/lane/don.png" id="7_xevnr"]
+
+[sub_resource type="Gradient" id="Gradient_8w558"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sex7o"]
+gradient = SubResource("Gradient_8w558")
+width = 332
+height = 176
+
+[sub_resource type="LabelSettings" id="LabelSettings_x8gt0"]
+font_size = 36
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_i6l6f"]
+font_size = 24
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Player" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 176.0
+
+[node name="Lane" type="Sprite2D" parent="."]
+position = Vector2(332, 0)
+texture = ExtResource("1_78gdr")
+centered = false
+
+[node name="HitCircle" type="Sprite2D" parent="Lane"]
+position = Vector2(76, 80)
+texture = ExtResource("2_q8qbm")
+
+[node name="Notes" type="Control" parent="Lane"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 76.0
+offset_top = 26.0
+offset_right = 940.0
+offset_bottom = 134.0
+
+[node name="Captions" type="Control" parent="Lane"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_top = 140.0
+offset_right = 948.0
+offset_bottom = 168.0
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_sex7o")
+centered = false
+
+[node name="Base" type="Sprite2D" parent="Background"]
+position = Vector2(264, 88)
+texture = ExtResource("2_wawyk")
+
+[node name="DonL" type="Sprite2D" parent="Background/Base"]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("3_6r4l0")
+centered = false
+offset = Vector2(-60, -66)
+region_enabled = true
+region_rect = Rect2(0, 0, 60, 132)
+region_filter_clip_enabled = true
+
+[node name="KaL" type="Sprite2D" parent="Background/Base"]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("4_jf3ky")
+centered = false
+offset = Vector2(-60, -66)
+region_enabled = true
+region_rect = Rect2(0, 0, 60, 132)
+region_filter_clip_enabled = true
+
+[node name="DonR" type="Sprite2D" parent="Background/Base"]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("3_6r4l0")
+centered = false
+offset = Vector2(0, -66)
+region_enabled = true
+region_rect = Rect2(60, 0, 60, 132)
+region_filter_clip_enabled = true
+
+[node name="KaR" type="Sprite2D" parent="Background/Base"]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("4_jf3ky")
+centered = false
+offset = Vector2(0, -66)
+region_enabled = true
+region_rect = Rect2(60, 0, 60, 132)
+region_filter_clip_enabled = true
+
+[node name="Combo" type="Label" parent="Background/Base"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -66.0
+offset_right = -60.0
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0
+"
+label_settings = SubResource("LabelSettings_x8gt0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="Background"]
+offset_top = 136.0
+offset_right = 332.0
+offset_bottom = 177.0
+text = "000000"
+label_settings = SubResource("LabelSettings_i6l6f")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ka2" type="Sprite2D" parent="."]
+position = Vector2(520, 80)
+texture = ExtResource("6_duf2n")
+
+[node name="Don2" type="Sprite2D" parent="."]
+position = Vector2(484, 80)
+texture = ExtResource("7_xevnr")
+
+[node name="Ka" type="Sprite2D" parent="."]
+position = Vector2(444, 80)
+texture = ExtResource("6_duf2n")
+
+[node name="Don" type="Sprite2D" parent="."]
+position = Vector2(408, 80)
+texture = ExtResource("7_xevnr")
